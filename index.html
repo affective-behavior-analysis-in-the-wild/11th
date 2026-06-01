@@ -806,6 +806,7 @@ The performance measure (P) is the average F1 score (Macro F1) at the video leve
 
 
 <h3>Baseline Results</h3> 
+        
 A performance of P = 0.2827 was obtained on the BAH public test set, using a baseline model (zero-shot setup with Multimodal-LLM (M-LLM), Video-LLaVA, with a simple prompt and vision modality only (code: https://github.com/sbelharbi/zero-shot-m-llm-bah-prediction). 
 See more details in [1]. Additionally, teams could build on top of standard multimodal models that leverage vision, audio, and text modalities, such as the one used in [1], and adapt it from frame-level prediction to video-level prediction: https://github.com/sbelharbi/bah-dataset. 
 Teams can explore improving standard multimodal models, temporal modeling, multimodal alignment, VLMs, and multimodal LLMs with specialized parameter-efficient fine-tuning (PEFT). 
@@ -813,6 +814,8 @@ All domain adaptation strategies including test time adaptation and personalizat
 Interpretable solutions are encouraged for instance: highlight when A/H occurred in a video, or which modalities/cues/conflicts are used by the model to decide. 
 The rich annotation of the BAH dataset could be used for training/evaluation. 
 Teams can access different solutions proposed in the previous challenge edition at this link: https://arxiv.org/pdf/2605.27451, with a summary at <a href = "https://sbelharbi.github.io/otherdocs/abaw-10th-ah-2nd/Summary-of-ABAW-10th-AH-2nd-CVPR-2026.pdf">these slides</a>.  
+
+<br></br>
         
 <p>
 [1]: González-González M, Belharbi S, Zeeshan MO, Sharafi M, Aslam MH, Pedersoli M, Koerich AL, Bacon SL, Granger E. “BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behavioural Change”. https://arxiv.org/pdf/2505.19328, ICLR, 2026.

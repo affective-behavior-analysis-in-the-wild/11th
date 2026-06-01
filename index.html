@@ -787,11 +787,11 @@ More specific details about this Challenge can be found <a href = "https://sbelh
 
  <h3>Goal of the Challenge and Rules</h3> 
 <p> 
-The challenge aims at the design of innovative models to predict A/H at the video-level to indicate whether or not a video contains A/H  (1: presence of A/H, 0: absence of A/H). Teams are required to develop their methods to recognize A/H at the video-level (binary task). Given a video, can we predict whether there is or not A/H?  Different learning setups could be considered: supervised/self-supervised, domain adaptation and personalization, zero-/few-shot learning, etc. Standard multimodal models could be used, in addition to multimodal LLMs and other recent architectures. Teams are advised to develop solutions tailored for A/H recognition.
+The challenge aims at the design of innovative models to predict A/H at the video-level to indicate whether or not a video contains A/H (1: presence of A/H, 0: absence of A/H). Teams are required to develop their methods to recognize A/H at the video level (binary task). Given a video, can we predict whether there is or not A/H? Different learning setups could be considered: supervised/self-supervised, domain adaptation (including test time adaptation) and personalization, zero-/few-shot learning, etc. Standard multimodal models could be used, in addition to VLMs, multimodal LLMs and other recent architectures. Teams are advised to develop solutions tailored for A/H recognition.
 </p
 
 <p>  
-Teams are allowed to use any publicly available or private pre-trained model and any public or private dataset (that contains any type of annotations, e.g. valence/arousal, basic or compound emotions, action units). Other datasets for ambivalence/hesitancy, if available, could be used, in addition to the BAH dataset, but they must be disclosed in the paper. 
+Teams are allowed to use any publicly available or private pre-trained model and any public or private dataset (that contains any type of annotations, e.g. valence/arousal, basic or compound emotions, action units). Other datasets for ambivalence/hesitancy, if available, could be used in addition to the BAH dataset, but they must be disclosed in the paper.
 </p>
  
 
@@ -800,17 +800,19 @@ Teams are allowed to use any publicly available or private pre-trained model and
  
 <h3>Performance Assessment</h3> 
 <p>
-The performance measure (P) is the average F1 score (Macro F1) at the video level across both classes (presence (1) and absence (0) of A/H) over the private test set, and will be used to rank teams. We will also report the average precision score (AP) of the positive class (1).
+The performance measure (P) is the average F1 score (Macro F1) at the video level across both classes (presence (1) and absence (0) of A/H) over the private test set and will be used to rank teams. We will also report the average precision score (AP) of the positive class (1).
 
 </p>
 
 
 <h3>Baseline Results</h3> 
-A performance of P = 0.2827 was obtained on the BAH public test set, using a baseline model (zero-shot setup with Multimodal-LLM (M-LLM), Video-LLaVA, with a simple prompt and vision modality only (code: https://github.com/sbelharbi/zero-shot-m-llm-bah-prediction). See more details in [1]. 
-
-Additionally, teams could build on top of standard multimodal models that leverage vision, audio, and text modality, such as the one used in [1], and adapt it from frame-level prediction to video-level prediction: https://github.com/sbelharbi/bah-dataset
-
-Teams can explore improving standard multimodal models, temporal modeling, multimodal alignment, and multimodal LLMs with specialized parameter-efficient fine-tuning (PEFT). Domain adaptation and personalization could also be considered.
+A performance of P = 0.2827 was obtained on the BAH public test set, using a baseline model (zero-shot setup with Multimodal-LLM (M-LLM), Video-LLaVA, with a simple prompt and vision modality only (code: https://github.com/sbelharbi/zero-shot-m-llm-bah-prediction). 
+See more details in [1]. Additionally, teams could build on top of standard multimodal models that leverage vision, audio, and text modalities, such as the one used in [1], and adapt it from frame-level prediction to video-level prediction: https://github.com/sbelharbi/bah-dataset. 
+Teams can explore improving standard multimodal models, temporal modeling, multimodal alignment, VLMs, and multimodal LLMs with specialized parameter-efficient fine-tuning (PEFT). 
+All domain adaptation strategies including test time adaptation and personalization could also be considered [2, 3, 4]. 
+Interpretable solutions are encouraged for instance: highlight when A/H occurred in a video, or which modalities/cues/conflicts are used by the model to decide. 
+The rich annotation of the BAH dataset could be used for training/evaluation. 
+Teams can access different solutions proposed in the previous challenge edition at this link: https://arxiv.org/pdf/2605.27451, with a summary at these slides.
 <br></br>
         
 <p>
@@ -822,7 +824,9 @@ Teams can explore improving standard multimodal models, temporal modeling, multi
 <p>
 [3]: Zeeshan MO, Aslam MH, Belharbi S, Koerich AL, Pedersoli M, Bacon S, Granger E. “Subject-based domain adaptation for facial expression recognition”. https://arxiv.org/pdf/2312.05632, FG conference, 2024.
 </p>
-
+<p>
+[4]: Sharafi M, Zeeshan MO, Belharbi S, Koerich A L, Pedersoli M, Granger E. “Test-Time Adaptation via Cache Personalization for Facial Expression Recognition in Videos”. https://arxiv.org/pdf/2603.21309, arXiv, 2026.
+</p>
 
 
 
